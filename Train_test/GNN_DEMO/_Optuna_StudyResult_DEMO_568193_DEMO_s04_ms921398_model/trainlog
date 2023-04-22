@@ -1,0 +1,89 @@
+trial_setup_dict
+{
+    "study_total_n_trials": 1,
+    "study_num_per_batch": 1,
+    "study_direction": "minimize",
+    "loss_mode": "MAE",
+    "eval_method": "default",
+    "modeltype_pyfilename": "GNN",
+    "opttrain_mode": "formula_GPU",
+    "dataset_edge(LIG)_filename": "_graphBiEDGE2DATA(LIG).csv",
+    "dataset_node(LIG)_filename": "_graphNODEDATA(LIG).csv",
+    "dataset(RCT)_filename": "_rawDATA(RCT).xlsx",
+    "dataset(RCTxLIG)_filename": "_rawDATA(RCTxLIG)_deltaE.xlsx",
+    "constant_node_num": 1,
+    "input_ndata_list": [
+        "boolean"
+    ],
+    "input_edata_list": [
+        "weight"
+    ],
+    "test_split": 0.2,
+    "vali_split": 0.2,
+    "stage2_converge": 1e-05,
+    "stage2_fluctuate_pc": 0.8,
+    "stage2_fluctuate_dv": 0.2,
+    "optimizer_chosen": "Adam",
+    "max_epoch_num": 100,
+    "batch_size": 10,
+    "model": {
+        "MPNN": {
+            "hidden_dim": 1,
+            "activation": "LeakyReLU",
+            "activation_alpha": 0.01,
+            "use_bias": 0,
+            "include_edge_feat": 1,
+            "repeat_msgANDhidden_layer": 1,
+            "message_dim": 2,
+            "layer_num": 4
+        },
+        "dense_E1": {
+            "units": 1,
+            "activation": "sigmoid",
+            "use_bias": 0,
+            "kernel_regularizer": "l2",
+            "kernel_constraint": "None"
+        },
+        "dense_E2": {
+            "units": 1,
+            "activation": "sigmoid",
+            "use_bias": 0,
+            "kernel_regularizer": "l2",
+            "kernel_constraint": "NonNeg"
+        },
+        "dense_output": {
+            "units": 1,
+            "activation": "linear",
+            "use_bias": 0,
+            "kernel_regularizer": "None",
+            "kernel_constraint": "NonNeg"
+        }
+    },
+    "study_foldername": "Optuna_StudyResult_DEMO_568193",
+    "sampler_seed": 3216,
+    "devid_suffix": "",
+    "study_log_input": null,
+    "study_log_output": "study_log1",
+    "_test_mode": "None",
+    "stage1_cutoff": 5.0,
+    "Adam": {
+        "learning_rate": 0.002
+    },
+    "input_ndata_dim": 1,
+    "input_edata_dim": 1,
+    "modeltrained_foldername": "_Optuna_StudyResult_DEMO_568193_DEMO_s04_ms921398_model",
+    "training_seed": 7421
+}
+training_seed= 7421
+IMPORTING from _func ...
+Data ...
+Model ...
+Optimizer ...
+################## STAGE  1 #######################
+use Arrhenius: False
+Epoch ( [train|valid|test] ):  0 [19.7014751|19.6173611|19.6323357]->  10 [18.8159962|18.7558594|18.7699471]->  20 [17.9923382|17.9332924|17.9473267]->  30 [17.1801968|17.1214886|17.1355133]->  40 [16.3725491|16.3139992|16.3280201]->  50 [15.5672741|15.5088177|15.5228357]->  60 [14.7634478|14.7050514|14.7190714]->  70 [13.9605846|13.9022293|13.9162483]->  80 [13.15839|13.1000633|13.1140823]->  90 [12.3566837|12.2983789|12.312398]->  99 [11.6354647|11.577179|11.591198]->  END
+################## STAGE  2 #######################
+use Arrhenius: True
+Epoch ( [train|valid|test] ):  0 [14137111.0|10036640.0|10036640.0]->  10 [1791615.0|1718749.25|1718749.0]->  20 [977184.5625|953803.4375|953803.0625]->  30 [654814.6875|643279.0625|643278.8125]->  40 [480679.5|473820.0625|473819.75]->  50 [371704.46875|367171.5625|367171.25]->  60 [297289.25|294082.9375|294082.59375]->  70 [243444.484375|241067.234375|241066.9375]->  80 [202849.6875|201024.84375|201024.515625]->  90 [171289.140625|169851.125|169850.8125]->  99 [148439.359375|147258.03125|147257.703125]->  END
+avg_dv out of 10: 2568.1921875
+This trial used 192.76444697380066 seconds

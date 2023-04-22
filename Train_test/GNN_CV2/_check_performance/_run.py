@@ -1,0 +1,18 @@
+import os
+
+os.system('python ../../__evalperform/0__check_DONEmodels.py')
+print(' Step 1/7: ... checked all trained models')
+os.system('python ../../__evalperform/1__gen_modelINFO.py')
+print(' Step 2/7: ... stored all loss info as csv file: modelINFO.csv')
+os.system('python ../../__evalperform/2__repeat_pyfile.py')
+print(' Step 3/7: ... stored all loss info as csv file: modelINFO.csv')
+os.system('python ../../__evalperform/3__update_modelINFO.py')
+print(' Step 4/7: ... updated modelINFO.csv as csv file: modelINFO_updated.csv')
+os.system('python ../../__evalperform/4__gen_modellist.py')
+print(' Step 5/7: ... stored selected model as: modellist')
+os.system('python ../../__evalperform/5__repeat_pyfile.py')
+print(' Step 6/7: ... stored intermediate values as csv file: _INT_dict.csv')
+print('           ... stored selected model info as: _TrainedModel_INFO')
+os.system('python ../../__evalperform/6_avgINT.py --modellist=modellist')
+os.system('python ../../__evalperform/6_avgPerform.py avgINT.csv --hide_plt=1')
+print(' Step 7/7: ... stored performance plots at: avgPerform/')

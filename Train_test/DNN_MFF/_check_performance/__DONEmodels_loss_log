@@ -1,0 +1,60 @@
+1
+4_model
+study 
+loss 3.5002825
+vali_loss 3.2325096
+test_loss 3.5084295
+2
+5_model
+study 
+loss 3.5002892
+vali_loss 3.2325134
+test_loss 3.5084438
+3
+8_model
+study 
+loss 3.5002897
+vali_loss 3.2325103
+test_loss 3.5084503
+4
+10_model
+study 
+loss 3.5002897
+vali_loss 3.232513
+test_loss 3.5084453
+5
+6_model
+study 
+loss 3.5002897
+vali_loss 3.2325144
+test_loss 3.5084424
+6
+1_model
+study 
+loss 3.5002897
+vali_loss 3.232513
+test_loss 3.5084453
+7
+9_model
+study 
+loss 3.5002933
+vali_loss 3.232511
+test_loss 3.5084486
+8
+2_model
+study 
+loss 3.5002933
+vali_loss 3.2325101
+test_loss 3.5084505
+9
+7_model
+study 
+loss 3.5002937
+vali_loss 3.2325101
+test_loss 3.5084505
+10
+3_model
+study 
+loss 3.5002947
+vali_loss 3.2325108
+test_loss 3.5084491

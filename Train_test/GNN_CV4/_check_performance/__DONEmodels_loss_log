@@ -1,0 +1,18 @@
+1
+3_model
+study 
+loss 0.9344608
+vali_loss 1.1745186
+test_loss 1.0342594
+2
+1_model
+study 
+loss 0.9604189
+vali_loss 1.1446885
+test_loss 1.1677463
+3
+2_model
+study 
+loss 1.0536346
+vali_loss 1.4518949
+test_loss 1.3527975

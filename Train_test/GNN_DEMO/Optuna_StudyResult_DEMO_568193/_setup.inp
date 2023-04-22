@@ -1,0 +1,79 @@
+{
+    "study_total_n_trials": 1,
+    "study_num_per_batch": 1,
+    "study_direction": "minimize",
+    "loss_mode": "MAE",
+    "eval_method": "default",
+    "modeltype_pyfilename": "GNN",
+    "opttrain_mode": "formula_GPU",
+    "dataset_edge(LIG)_filename": "_graphBiEDGE2DATA(LIG).csv",
+    "dataset_node(LIG)_filename": "_graphNODEDATA(LIG).csv",
+    "dataset(RCT)_filename": "_rawDATA(RCT).xlsx",
+    "dataset(RCTxLIG)_filename": "_rawDATA(RCTxLIG)_deltaE.xlsx",
+    "constant_node_num": 1,
+    "input_ndata_list": [
+        "boolean"
+    ],
+    "input_edata_list": [
+        "weight"
+    ],
+    "test_split": 0.2,
+    "vali_split": 0.2,
+    "stage1_cutoff": {
+        "categorical": [
+            5.0,
+            6.0,
+            7.0
+        ]
+    },
+    "stage2_converge": 1e-05,
+    "stage2_fluctuate_pc": 0.8,
+    "stage2_fluctuate_dv": 0.2,
+    "optimizer_chosen": "Adam",
+    "Adam|learning_rate": {
+        "categorical": [
+            0.0005,
+            0.001,
+            0.002,
+            0.005
+        ]
+    },
+    "max_epoch_num": 100,
+    "batch_size": 10,
+    "model|MPNN|message_dim": {
+        "categorical": [
+            2,
+            3,
+            4
+        ]
+    },
+    "model|MPNN|hidden_dim": 1,
+    "model|MPNN|activation": "LeakyReLU",
+    "model|MPNN|activation_alpha": 0.01,
+    "model|MPNN|use_bias": 0,
+    "model|MPNN|include_edge_feat": 1,
+    "model|MPNN|layer_num": {
+        "categorical": [
+            3,
+            4,
+            5
+        ]
+    },
+    "model|MPNN|repeat_msgANDhidden_layer": 1,
+    "model|dense_E1|units": 1,
+    "model|dense_E1|activation": "sigmoid",
+    "model|dense_E1|use_bias": 0,
+    "model|dense_E1|kernel_regularizer": "l2",
+    "model|dense_E1|kernel_constraint": "None",
+    "model|dense_E2|units": 1,
+    "model|dense_E2|activation": "sigmoid",
+    "model|dense_E2|use_bias": 0,
+    "model|dense_E2|kernel_regularizer": "l2",
+    "model|dense_E2|kernel_constraint": "NonNeg",
+    "model|dense_output|units": 1,
+    "model|dense_output|activation": "linear",
+    "model|dense_output|use_bias": 0,
+    "model|dense_output|kernel_regularizer": "None",
+    "model|dense_output|kernel_constraint": "NonNeg",
+    "study_foldername": "Optuna_StudyResult_DEMO_568193"
+}
